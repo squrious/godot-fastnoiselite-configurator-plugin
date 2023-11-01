@@ -1,4 +1,3 @@
-@tool
 extends HBoxContainer
 
 @onready var randomize_button = $HBoxContainer/RandomizeButton

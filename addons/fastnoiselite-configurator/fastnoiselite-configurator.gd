@@ -1,28 +1,17 @@
 @tool
 extends EditorPlugin
 
-const MainPanel = preload("res://addons/fastnoiselite-configurator/fastnoiselite-configurator.tscn")
-
-var main_panel_instance
+const SCENE_NAME = "res://addons/fastnoiselite-configurator/fastnoiselite-configurator.tscn"
+const MENU_NAME = "Open FastNoiseLite Configurator"
+const COMMAND_NAME = "addons/open_fastnoiselite_configurator"
 
 func _enter_tree():
-	main_panel_instance = MainPanel.instantiate()
-	get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
-	_make_visible(false)
+	add_tool_menu_item(MENU_NAME, run_configurator)
+	get_editor_interface().get_command_palette().add_command(MENU_NAME, COMMAND_NAME, run_configurator)
 
 func _exit_tree():
-	if main_panel_instance: 
-		main_panel_instance.queue_free()
+	remove_tool_menu_item(MENU_NAME)
+	get_editor_interface().get_command_palette().remove_command(COMMAND_NAME)
 
-
-func _has_main_screen():
-	return true
-
-
-func _make_visible(visible):
-	if main_panel_instance:
-		main_panel_instance.visible = visible
-
-
-func _get_plugin_name():
-	return "FastNoiseLite Configurator"
+func run_configurator():
+	get_editor_interface().play_custom_scene(SCENE_NAME)

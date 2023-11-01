@@ -1,4 +1,3 @@
-@tool
 extends ControlGroup
 
 enum TYPE {

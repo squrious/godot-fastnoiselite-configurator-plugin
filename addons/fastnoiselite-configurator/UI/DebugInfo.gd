@@ -1,4 +1,3 @@
-@tool
 extends PanelContainer
 
 @onready var compute_time_label = $MarginContainer/VBoxContainer/ComputeTime

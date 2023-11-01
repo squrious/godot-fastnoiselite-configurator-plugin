@@ -1,4 +1,3 @@
-@tool
 extends TextureRect
 
 func drawFromSettings(settings: Settings):
