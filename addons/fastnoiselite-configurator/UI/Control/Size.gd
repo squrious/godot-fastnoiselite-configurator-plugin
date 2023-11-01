@@ -4,9 +4,9 @@ extends ControlGroup
 func _configure():
 	mapping = {
 		"x": {
-			"control": $VBoxContainer/X/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/X/SpinBox,
 		},
 		"y": {
-			"control": $VBoxContainer/Y/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Y/SpinBox,
 		}
 	}

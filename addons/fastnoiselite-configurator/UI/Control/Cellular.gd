@@ -21,14 +21,14 @@ enum RETURN_TYPE {
 func _configure():
 	mapping = {
 		"distance_function": {
-			"control": $VBoxContainer/DistanceFunction/OptionButton,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/DistanceFunction/OptionButton,
 			"values": DISTANCE_FUNCTION
 		},
 		"jitter": {
-			"control": $VBoxContainer/Jitter/SpinBox
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Jitter/SpinBox
 		},
 		"return_type": {
-			"control": $VBoxContainer/ReturnType/OptionButton,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ReturnType/OptionButton,
 			"values": RETURN_TYPE
 		}
 			

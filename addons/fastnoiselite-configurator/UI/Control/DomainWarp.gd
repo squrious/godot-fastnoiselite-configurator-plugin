@@ -16,32 +16,32 @@ enum TYPE {
 func _configure():
 	mapping = {
 		"enabled": {
-			"control": $VBoxContainer/Enabled,
+			"control": $MarginContainer/VBoxContainer/Enabled,
 		},
 		"amplitude": {
-			"control": $VBoxContainer/Amplitude/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Amplitude/SpinBox,
 		},
 		"fractal_gain": {
-			"control": $VBoxContainer/FractalGain/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/FractalGain/SpinBox,
 		},
 		"fractal_type": {
-			"control": $VBoxContainer/FractalType/OptionButton,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/FractalType/OptionButton,
 			"values": FRACTAL_TYPE,
 		},
 		"frequency": {
-			"control": $VBoxContainer/Frequency/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Frequency/SpinBox,
 		},
 		"fractal_octaves": {
-			"control": $VBoxContainer/FractalOctaves/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/FractalOctaves/SpinBox,
 		},
 		"type": {
-			"control": $VBoxContainer/Type/OptionButton,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Type/OptionButton,
 			"values": TYPE
 		}
 	}
 	
-	set_options_visibility($VBoxContainer/Enabled.button_pressed)
-	$VBoxContainer/Enabled.connect("toggled", func(pressed): 
+	set_options_visibility($MarginContainer/VBoxContainer/Enabled.button_pressed)
+	$MarginContainer/VBoxContainer/Enabled.connect("toggled", func(pressed): 
 		set_options_visibility(pressed)
 	)
 	

@@ -8,8 +8,13 @@ signal value_changed(value: Variant)
 @onready
 var mapping: Dictionary
 
+var _proxy: Node = self
+
 func _configure():
 	pass
+
+func _proxify(proxy: Node):
+	_proxy = proxy
 
 var _storage = {}
 

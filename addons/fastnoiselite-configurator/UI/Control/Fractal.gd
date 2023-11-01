@@ -9,25 +9,26 @@ enum TYPE {
 }
 
 func _configure():
+	
 	mapping = {
 		"type": {
-			"control": $VBoxContainer/Type/OptionButton,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Type/OptionButton,
 			"values": TYPE
 		},
 		"gain": {
-			"control": $VBoxContainer/Gain/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Gain/SpinBox,
 		},
 		"lacunarity": {
-			"control": $VBoxContainer/Lacunarity/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Lacunarity/SpinBox,
 		},
 		"octaves": {
-			"control": $VBoxContainer/Octaves/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Octaves/SpinBox,
 		},
 		"ping_pong_strength": {
-			"control": $VBoxContainer/PingPongStrength/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/PingPongStrength/SpinBox,
 		},
 		"weighted_strength": {
-			"control": $VBoxContainer/WeightedStrength/SpinBox,
+			"control": $MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/WeightedStrength/SpinBox,
 		},
 	}
 	
@@ -37,7 +38,7 @@ func _configure():
 		for p in ["gain", "lacunarity", "octaves", "weighted_strength"]: mapping[p]["control"].get_parent().visible = v.type != TYPE.NONE
 		
 		
-		$VBoxContainer/PingPongStrength.visible = v.type == TYPE.PING_PONG
+		$MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/PingPongStrength.visible = v.type == TYPE.PING_PONG
 	)
 	
 	

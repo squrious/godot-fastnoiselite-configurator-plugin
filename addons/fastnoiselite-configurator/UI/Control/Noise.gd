@@ -10,28 +10,28 @@ enum NOISE_TYPE {
 	SIMPLEX_SMOOTH = FastNoiseLite.TYPE_SIMPLEX_SMOOTH,
 }
 
-@onready var cellular_control = $ScrollContainer/VBoxContainer/Cellular
+@onready var cellular_control = $MarginContainer/VBoxContainer/Cellular
 
 func _configure():
 	mapping = {
 		"seed": {
-			"control": $ScrollContainer/VBoxContainer/Seed/HBoxContainer/SpinBox
+			"control": $MarginContainer/VBoxContainer/Seed/HBoxContainer/SpinBox
 		},
 		"noise_type": {
-			"control": $ScrollContainer/VBoxContainer/Type/OptionButton,
+			"control": $MarginContainer/VBoxContainer/Type/OptionButton,
 			"values": NOISE_TYPE,
 		},
 		"frequency": {
-			"control": $ScrollContainer/VBoxContainer/Frequency/SpinBox
+			"control": $MarginContainer/VBoxContainer/Frequency/SpinBox
 		},		
 		"size": {
-			"control": $ScrollContainer/VBoxContainer/Size,
+			"control": $MarginContainer/VBoxContainer/Size,
 		},
 		"domain_warp": {
-			"control": $ScrollContainer/VBoxContainer/DomainWarp,
+			"control": $MarginContainer/VBoxContainer/DomainWarp,
 		},
 		"fractal": {
-			"control": $ScrollContainer/VBoxContainer/Fractal,
+			"control": $MarginContainer/VBoxContainer/Fractal,
 		},
 		"cellular": {
 			"control": cellular_control,
