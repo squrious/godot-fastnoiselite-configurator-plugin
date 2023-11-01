@@ -48,8 +48,9 @@ func _ready():
 func draw_preview():
 	var time = Time.get_ticks_msec();
 
-	viewport.drawFromSettings(settings);
+	await viewport.drawFromSettings(settings);
 
 	var elapsed_time = Time.get_ticks_msec() - time;
+	
 	debug_panel.compute_time = elapsed_time;
 	tool_settings.snippet_parameters = settings.get_noise_parameters()
