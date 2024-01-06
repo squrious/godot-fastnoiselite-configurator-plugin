@@ -17,7 +17,7 @@ Here you can play with the main parameters of the FastNoiseLite object. The view
 
 ### Tool panel
 
-Here you can reset the settings to default values, and get the code snippet for current parameters.
+Here you can reset the settings to default values, get the code snippet for current parameters, and save/load a FastNoiseLite resource.
 
 ![Tool panel](/assets/tool_panel.png)
 

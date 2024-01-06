@@ -27,6 +27,18 @@ func loadSettings(path: String) -> Settings:
 
 	return settings;
 
+func loadTexture(path: String) -> PreviewTexture:
+	path = _get_plugin_file_path(path)
+	if !ResourceLoader.exists(path, "PreviewTexture"):
+		var texture = PreviewTexture.new()
+		texture.reset()
+		return texture
+
+	return ResourceLoader.load(path, "PreviewTexture")
+
+func saveTexture(path: String, texture: PreviewTexture) -> void:
+	path = _get_plugin_file_path(path)
+	ResourceSaver.save(texture, path)
 
 func _get_plugin_file_path(path: String, create_directory: bool = false) -> String:
 	path = PLUGIN_DATA_DIR.path_join(path);	
@@ -35,5 +47,3 @@ func _get_plugin_file_path(path: String, create_directory: bool = false) -> Stri
 		if not (DirAccess.dir_exists_absolute(dir)):
 			DirAccess.make_dir_recursive_absolute(dir)
 	return path
-
-

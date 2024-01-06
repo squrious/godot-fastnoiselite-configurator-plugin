@@ -13,7 +13,7 @@ config_version=5
 config/name="FastNoiseLiteConfigurator"
 config/description="A simple tool to configure a FastNoiseLite noise with a live preview."
 run/main_scene="res://addons/fastnoiselite-configurator/fastnoiselite-configurator.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
 [display]

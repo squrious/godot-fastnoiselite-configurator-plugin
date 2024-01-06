@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dokvx037bur88"]
+[gd_scene load_steps=19 format=3 uid="uid://dokvx037bur88"]
 
 [ext_resource type="FontFile" uid="uid://c83q7bmxvg8gi" path="res://addons/fastnoiselite-configurator/assets/Hack_Regular.ttf" id="1_3c6wn"]
 [ext_resource type="Script" path="res://addons/fastnoiselite-configurator/UI/UI.gd" id="1_x7r5x"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://addons/fastnoiselite-configurator/UI/Control/Fractal.gd" id="6_qljlt"]
 [ext_resource type="Script" path="res://addons/fastnoiselite-configurator/UI/Control/Cellular.gd" id="7_54ehr"]
 [ext_resource type="Script" path="res://addons/fastnoiselite-configurator/UI/Control/Tool.gd" id="8_jcqrt"]
-[ext_resource type="Script" path="res://addons/fastnoiselite-configurator/UI/Preview.gd" id="9_isml3"]
 [ext_resource type="Script" path="res://addons/fastnoiselite-configurator/UI/DebugInfo.gd" id="9_s2ggt"]
 
 [sub_resource type="Theme" id="Theme_lp5bd"]
@@ -597,6 +596,31 @@ text = "Reset noise parameters"
 initial_position = 2
 dialog_text = "Do you want to reset noise settings to their default values?"
 
+[node name="SaveResourceButton" type="Button" parent="HSplitContainer/TabContainer/Tool/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save as Resource"
+
+[node name="FileDialog" type="FileDialog" parent="HSplitContainer/TabContainer/Tool/MarginContainer/VBoxContainer/SaveResourceButton"]
+mode = 4
+title = "Save Noise as Resource"
+initial_position = 4
+size = Vector2i(1280, 720)
+ok_button_text = "Save"
+filters = PackedStringArray("*.tres")
+
+[node name="LoadResourceButton" type="Button" parent="HSplitContainer/TabContainer/Tool/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load a Resource"
+
+[node name="FileDialog" type="FileDialog" parent="HSplitContainer/TabContainer/Tool/MarginContainer/VBoxContainer/LoadResourceButton"]
+mode = 4
+title = "Open a File"
+initial_position = 4
+size = Vector2i(1280, 720)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.tres")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/TabContainer/Tool/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -632,8 +656,8 @@ text = "{
 	\"cellular_return_type\": 3,
 }"
 editable = false
-syntax_highlighter = SubResource("CodeHighlighter_41h1v")
 scroll_fit_content_height = true
+syntax_highlighter = SubResource("CodeHighlighter_41h1v")
 
 [node name="CopyButton" type="Button" parent="HSplitContainer/TabContainer/Tool/MarginContainer/VBoxContainer/VBoxContainer/CodeSnippet"]
 layout_mode = 1
@@ -654,7 +678,6 @@ layout_mode = 2
 texture = SubResource("NoiseTexture2D_2w1io")
 expand_mode = 1
 stretch_mode = 5
-script = ExtResource("9_isml3")
 
 [node name="DebugInfo" type="PanelContainer" parent="."]
 visible = false
@@ -680,6 +703,7 @@ label_settings = SubResource("LabelSettings_vnmdv")
 horizontal_alignment = 1
 
 [node name="ComputeTime" type="Label" parent="DebugInfo/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 size_flags_vertical = 1
 text = "Computed in 0,112 seconds"
